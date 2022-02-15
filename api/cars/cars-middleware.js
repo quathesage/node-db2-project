@@ -58,7 +58,6 @@ const checkVinNumberValid = (req, res, next) => {
 const checkVinNumberUnique = async (req, res, next) => {
   // DO YOUR MAGIC
   const [vin] = await db("cars").where("vin", req.body.vin);
-  console.log(vin);
   if (vin === undefined) {
     next();
   } else {
